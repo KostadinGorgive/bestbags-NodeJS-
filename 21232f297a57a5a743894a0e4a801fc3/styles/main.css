@@ -1,0 +1,401 @@
+* {
+	font-family: Verdana;
+	font-size: 11px;
+}
+a {
+text-decoration: none;
+}
+body {
+	margin: 0px auto;
+	width: 990px;
+	padding: 0px;
+	background: #F9FAF6;
+	color: #000000;
+	font-family: Verdana;
+	font-size: 11px;
+}
+.borderstyle {
+	padding: 5px;
+	font-family: verdana;
+	font-size: 11px;
+	background-color: #fcfcfc;
+	border-top: 1px solid #d9d9d9;
+	border-left: 1px solid #d9d9d9;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	color: #4c4c4c;
+}
+.formstyle {
+	padding: 5px;
+	font-family: verdana;
+	font-size: 11px;
+	background-color: #fcfcfc;
+	border-top: 1px solid #d9d9d9;
+	border-left: 1px solid #d9d9d9;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	color: #4c4c4c;
+}
+.formstyle:focus {
+	font-family: verdana;
+	font-size: 11px;
+	background-color: #f7f7f7;
+	border-top: 1px solid #999999;
+	border-left: 1px solid #999999;
+	border-right: 1px solid #7f7f7f;
+	border-bottom: 1px solid #7f7f7f;
+	color: #0d0d0d;
+}
+.formstyle:hover {
+	font-family: verdana;
+	font-size: 11px;
+	background-color: #f7f7f7;
+	border-top: 1px solid #999999;
+	border-left: 1px solid #999999;
+	border-right: 1px solid #7f7f7f;
+	border-bottom: 1px solid #7f7f7f;
+	color: #0d0d0d;
+}
+p, form {
+	margin: 0px;
+	padding: 0px;
+}
+#error {
+	font-family: verdana;
+	font-size: 11px;
+	color: #FF0000;
+}
+a:link {
+	color: #000000;
+}
+a:visited {
+	color: #000000;
+}
+
+
+
+
+
+
+
+
+
+#wraper {
+	margin: 10px auto;
+	padding: 0 20px;
+	border: 1px solid silver;
+	background: #ffffff;
+	-moz-border-radius: 8px;
+}
+
+#banner {
+	margin: 0 auto;
+    padding: 0;
+	width: 990px;
+	height: 100px;
+	background: #ffffff url(../images/logo.png) no-repeat center;
+}
+#menubar{
+    margin: 10px auto;
+    width: 890px;
+}
+.notication {
+	/*width: 150px;*/
+	padding: 10px;
+	margin: 10px 0;
+	float: right;
+	background-color: #fcfcfc;
+	border-top: 1px solid #d9d9d9;
+	border-left: 1px solid #d9d9d9;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	color: #4c4c4c;
+}
+.content_table {
+	width: 890px;
+	padding: 5px;
+	margin: 15px auto;
+	background-color: #fcfcfc;
+	border-top: 1px solid #d9d9d9;
+	border-left: 1px solid #d9d9d9;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	color: #4c4c4c;
+}
+.page_go {
+	width: 20px;
+	text-align: center;
+	font-family: Verdana;
+	font-size: 11px;
+}
+.section_title {
+	width: 890px;
+	text-align: center;
+	margin: 10px 0;
+	font-weight: bold;
+}
+.section_page_bar {
+	width: 890px;
+	text-align: right;
+}
+.section_page_bar a , .section_page_bar input{
+	margin: 0 3px;
+}
+.section_content {
+	width: 890px;
+}
+
+
+/* Begin index.php */
+#ads {
+    margin: 10px auto;
+    width: 890px;
+}
+.ad_menu {
+	float: right;
+	padding-right: 10px;
+}
+.ad_editor {
+	width:110px;
+	text-align: center;
+	font-weight: bold;
+}
+.ad_title {
+	text-align: center;
+	font-weight: bold;
+}
+.ad_title_editor {
+	width: 780px;
+}
+.ad_content_editor {
+	width: 780px;
+	height: 200px;
+}
+.ad_info {
+	font-size: 9px;
+	float: right;
+	padding-right: 10px;
+}
+
+
+
+#news {
+    margin: 10px auto;
+    width: 890px;
+}
+.news_menu {
+	float: right;
+	padding-right: 10px;
+}
+.news_editor {
+	width:110px;
+	text-align: center;
+	font-weight: bold;
+}
+.news_title {
+	text-align: center;
+	font-weight: bold;
+}
+.news_title_editor {
+	width: 780px;
+}
+.news_content_editor {
+	width: 780px;
+	height: 200px;
+}
+.news_info {
+	font-size: 9px;
+	float: right;
+	padding-right: 10px;
+}
+.card_editor {
+	width:200px;
+	text-align: center;
+	font-weight: bold;
+}
+.card_value_editor {
+	width: 200px;
+}
+.card_full_info {
+	width: 864px;
+	height: 100px;
+}
+.card_comment {
+	width: 640px;
+	height: 100px;
+}
+.news_content {
+	text-align: left;
+	text-indent: 20px;
+}
+.card_content_editor {
+	width: 780px;
+	height: 200px;
+}
+/* End index.php */
+
+.users_title {
+	text-align: center;
+	font-weight: bold;
+}
+.configs_title {
+	text-align: center;
+	font-weight: bold;
+}
+.groups_title {
+	text-align: center;
+	font-weight: bold;
+}
+
+/* Begin cart.php */
+#cart {
+    margin: 10px auto;
+    width: 890px;
+}
+/* End cart.php */
+
+/* Begin cards.php, mycards.php */
+.iconcc {
+	width: 50px;
+	height: 50px;
+}
+
+#search_cards, #cards {
+    margin: 10px auto;
+    width: 890px;
+}
+/* End cards.php, mycards.php */
+
+/* Begin myaccount, myorder, deposit */
+#myaccount, #balance, #purchase_history {
+    margin: 10px auto;
+    width: 890px;
+}
+.paygate_title {
+	text-align: center;
+	font-weight: bold;
+	padding: 10px;
+}
+.paygate_content {
+	text-align: left;
+	font-family: verdana;
+	font-size: 12px;
+	color: #000000;
+}
+/* End myaccount, myorder, deposit */
+
+/* Begin support.php */
+#support {
+    margin: 10px auto;
+    width: 890px;
+}
+.support_title {
+	width: 200px;
+	text-align: center;
+	font-weight: bold;
+	padding: 10px;
+}
+.support_content {
+	width: 690px;
+	text-align: left;
+	font-family: verdana;
+	font-size: 12px;
+	color: #000000;
+}
+.support_content input{
+	width: 670px;
+}
+.support_content textarea{
+	width: 670px;
+	height: 200px;
+}
+/* End support.php */
+
+/* Begin checker.php */
+#check_history {
+    margin: 10px auto;
+    width: 890px;
+}
+/* End checker.php */
+
+/* Begin users.php */
+#user_manager {
+    margin: 10px auto;
+    width: 890px;
+}
+/* End users.php */
+
+/* Begin config.php */
+#config_manager {
+    margin: 10px auto;
+    width: 890px;
+}
+/* End config.php */
+
+
+/* Begin groups.php */
+#group_manager {
+    margin: 10px auto;
+    width: 890px;
+}
+/* End groups.php */
+
+
+
+
+
+
+#login_success {
+    margin: auto;
+	margin-top: 50px;
+	margin-bottom: 20px;
+    width: 890px;
+	text-align: center;
+}
+
+
+#copyright {
+    margin: auto;
+	margin-top: 50px;
+	margin-bottom: 20px;
+    width: 890px;
+	text-align: center;
+}
+
+
+.centered {
+	text-align:center;
+}
+.right {
+	text-align:right;
+}
+.left {
+	text-align:left;
+}
+.red {
+	color: #ff0000;
+}
+.green {
+	color: #00ff00;
+}
+.blue {
+	color: #0000ff;
+}
+.black
+{
+	color: #000000;
+}
+.pink{
+	color:#FF00FF;
+}
+.bold {
+	font-weight:bold;
+}
+
+.clear {
+	clear: both;
+}
+
+
+
+

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>https://majorcc.shop/</loc>
+	<lastmod>2021-10-30T00:00:51+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://majorcc.shop/register.php</loc>
+	<lastmod>2021-10-30T00:00:52+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://majorcc.shop/login.php</loc>
+	<lastmod>2021-10-30T00:00:57+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+</urlset>

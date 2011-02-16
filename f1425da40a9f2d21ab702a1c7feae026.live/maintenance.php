@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<!-- Source: https://www.wmtips.com/html/howto-make-a-perfect-site-maintenance-page.htm -->
+<html lang="en">
+<head>
+    <link rel="icon" href="./images/icon.jpg" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Maintenance...</title>
+<style type="text/css">
+body
+{
+font: 20px Helvetica, sans-serif; color: #fff;
+}
+html, body {
+background: #222831;
+}
+:root {
+  --black: #000;
+  --white: #fff;
+
+  --sky-top: #020337;
+  --sky-bottom: #01023f;
+  --moon: #ffed9b;
+  --moon-crater: #fee36e;
+  --moon-crater-shadow: #f9d11c;
+  --moon-size: 500px;
+
+  --wolf-grey: #7b7b7b;
+  --wolf-light-grey: #8c8c8c;
+  --wolf-body: #6b6b6b;
+  --wolf-leg-behind: #5b5b5b;
+  --wolf-chest: #cecdcd;
+
+  --wolf-mane: #8e8e8e;
+
+  --howl-timing: 1s;
+}
+
+html {
+  background-color: var(--sky);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.wolf *,
+.wolf *:before,
+.wolf *:after {
+  transition: background-color 0.3s, border-color 0.3s;
+}
+.wolf:hover {
+  --white: var(--black);
+  --wolf-grey: var(--black);
+  --wolf-light-grey: var(--black);
+  --wolf-body: var(--black);
+  --wolf-leg-behind: var(--black);
+  --wolf-chest: var(--black);
+  --wolf-mane: var(--black);
+}
+
+.wolf:hover .tail {
+  animation-play-state: paused;
+}
+
+.wolf:hover .head {
+  transform: rotate(85deg);
+}
+
+.wolf:hover .head .mane-lower-1 {
+  transform: rotate(-85deg);
+}
+
+.wolf:hover .head .mane-lower-2 {
+  transform: rotate(-79deg) skewY(-17deg) translate(-8px, -11px);
+}
+
+.wolf:hover .front-chest {
+  transform: translate(2px, -5px);
+}
+
+.moon {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 225px;
+  overflow: hidden;
+  width: var(--moon-size);
+  height: var(--moon-size);
+  border-radius: 50%;
+  background-color: var(--moon);
+  border-right: 6px solid var(--moon-crater-shadow);
+}
+
+.crater {
+  opacity: 0.2;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: var(--moon-crater);
+  border-left: 6px solid var(--moon-crater-shadow);
+  transform: rotate(-125deg);
+}
+
+.crater-1 {
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--moon-crater);
+}
+
+.crater-2 {
+  position: absolute;
+  top: 2%;
+  left: 10%;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: var(--moon-crater);
+}
+
+.crater-3 {
+  position: absolute;
+  top: -5%;
+  left: 47%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: var(--moon-crater);
+}
+
+.crater-4 {
+  position: absolute;
+  top: 33%;
+  left: 87%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: var(--moon-crater);
+}
+
+.crater-5 {
+  position: absolute;
+  top: 10%;
+  left: 80%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: var(--moon-crater);
+}
+
+.crater-6 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--moon-crater);
+}
+
+.crater-7 {
+  position: absolute;
+  top: 60%;
+  left: 10%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--moon-crater);
+}
+
+.crater-8 {
+  position: absolute;
+  top: 20%;
+  left: 60%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--moon-crater);
+}
+
+.crater-9 {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: var(--moon-crater);
+}
+
+.crater-10 {
+  position: absolute;
+  top: 65%;
+  left: 60%;
+  width: 180px;
+  height: 180px;
+
+}
+
+.mountain {
+  position: absolute;
+  bottom: 0;
+}
+
+.ridge-1 {
+  position: relative;
+  left: -40px;
+  width: 100px;
+  border-left: 250px inset transparent;
+  border-right: 250px inset transparent;
+  border-bottom: 350px solid var(--black);
+}
+
+.ridge-2 {
+  position: absolute;
+  left: 100px;
+  bottom: 25px;
+  width: 150px;
+  border-left: 170px inset transparent;
+  border-right: 170px inset transparent;
+  border-bottom: 300px solid var(--black);
+}
+
+.ridge-3 {
+  position: absolute;
+  left: -100px;
+  bottom: 0;
+  width: 190px;
+  border-left: 120px inset transparent;
+  border-right: 120px inset transparent;
+  border-bottom: 200px solid var(--black);
+}
+
+.ridge-4 {
+  position: absolute;
+  left: 420px;
+  bottom: 0;
+  width: 100px;
+  border-left: 80px inset transparent;
+  border-right: 80px inset transparent;
+  border-bottom: 148px solid var(--black);
+}
+
+.wolf {
+  position: absolute;
+  bottom: 301px;
+  width: 315px;
+  height: 230px;
+  cursor: pointer;
+}
+
+.head {
+  position: absolute;
+  top: 20px;
+  left: 47px;
+  width: 50px;
+  height: 50px;
+  z-index: 10;
+  transform: rotate(0);
+  transition: transform var(--howl-timing);
+}
+
+.head-main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--wolf-grey);
+  z-index: 2;
+}
+
+.eye {
+  position: absolute;
+  top: 14px;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: var(--black);
+  border-radius: 50%;
+  z-index: 5;
+  animation: blink 4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+.eye:after {
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background-color: var(--white);
+  content: '';
+}
+
+.snout {
+  position: absolute;
+  top: 23px;
+  left: -23px;
+  transform: rotate(-35deg);
+  z-index: 5;
+}
+
+.snout-upper {
+  border-left: 28px solid var(--wolf-grey);
+  border-right: 25px inset transparent;
+  border-bottom: 23px inset transparent;
+  border-radius: 50%;
+}
+
+.snout-upper:before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 28px;
+  height: calc(100% - 5px);
+  border-radius: 50%;
+  border-bottom-right-radius: 0;
+  z-index: 5;
+  background-color: var(--wolf-light-grey);
+}
+
+.snout-upper:after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 7px;
+  width: 28px;
+  height: 9px;
+  background-color: var(--wolf-grey);
+}
+
+.snout-lower {
+  position: absolute;
+  left: 5px;
+  bottom: -7px;
+  border-left: 28px solid var(--wolf-grey);
+  border-right: 12px inset transparent;
+  border-bottom: 12px inset transparent;
+  border-radius: 50%;
+}
+
+.nose {
+  position: absolute;
+  top: 0;
+  left: 1px;
+  border-left: 10px solid var(--black);
+  border-right: 10px inset transparent;
+  border-bottom: 10px inset transparent;
+  z-index: 1;
+}
+
+.ear-left {
+  position: absolute;
+  top: 0px;
+  right: -8px;
+  transform: rotate(-69deg) skewY(6deg);
+  width: 40px;
+  height: 20px;
+  border-right: 20px ridge var(--wolf-grey);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.ear-right {
+  position: absolute;
+  top: 8px;
+  right: 1px;
+  transform: rotate(-77deg) skewY(6deg);
+  width: 40px;
+  height: 20px;
+  border-right: 20px ridge var(--wolf-grey);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.mane-lower-1 {
+  position: absolute;
+  top: 18px;
+  left: -13px;
+  transform: rotate(-29deg);
+  width: 35px;
+  height: 59px;
+  border-right: 20px solid var(--wolf-grey);
+  border-radius: 50%;
+  z-index: -1;
+  transition: border-color 0.3s, transform var(--howl-timing);
+}
+
+.mane-lower-2 {
+  position: absolute;
+  top: 10px;
+  right: -13px;
+  transform: rotate(-23deg) skewY(3deg);
+  width: 35px;
+  height: 60px;
+  border-right: 20px solid var(--wolf-grey);
+  border-radius: 50%;
+  transition: border-color 0.3s, transform var(--howl-timing);
+  z-index: -1;
+}
+
+.mane-higher-1 {
+  position: absolute;
+  top: -7px;
+  right: -23px;
+  transform: rotate(118deg);
+  width: 20px;
+  height: 40px;
+  border-right: 6px solid var(--wolf-mane);
+  border-radius: 50%;
+  z-index: 4;
+}
+
+.mane-higher-2 {
+  position: absolute;
+  top: -15px;
+  right: -22px;
+  transform: rotate(107deg);
+  width: 25px;
+  height: 40px;
+  border-right: 6px solid var(--wolf-mane);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.body {
+  position: absolute;
+  top: 89px;
+  left: 78px;
+  width: 157px;
+  height: 66px;
+}
+
+.top-section {
+  position: absolute;
+  top: -35px;
+  left: -7px;
+  width: 62px;
+  height: 83px;
+  border-radius: 50%;
+  background-color: var(--wolf-body);
+}
+
+.top-section:before {
+  position: absolute;
+  top: -21px;
+  right: -2px;
+  transform: rotate(128deg);
+  width: 20px;
+  height: 40px;
+  border-right: 6px solid var(--wolf-body);
+  border-radius: 50%;
+  content: '';
+}
+
+.top-section:after {
+  position: absolute;
+  top: -11px;
+  right: -7px;
+  transform: rotate(128deg);
+  width: 20px;
+  height: 40px;
+  border-right: 6px solid var(--wolf-body);
+  border-radius: 50%;
+  content: '';
+}
+
+.mid-section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: rotate(11deg);
+  border-radius: 100px;
+  background-color: var(--wolf-body);
+  z-index: 1;
+}
+
+.tail {
+  position: absolute;
+  top: -15px;
+  right: -20px;
+  transform: rotate(120deg) rotateX(5deg);
+  width: 56px;
+  height: 95px;
+  border-right: 27px solid var(--wolf-leg-behind);
+  border-radius: 50%;
+  z-index: 1;
+  will-change: transform;
+  transform-origin: bottom left;
+  animation: tail-wag 0.5s linear;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+.tail .top {
+  position: absolute;
+  top: 49px;
+  left: 17px;
+  transform: rotate(6deg);
+  width: 35px;
+  height: 47px;
+  border-right: 16px solid var(--wolf-leg-behind);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.tail .bottom {
+  position: absolute;
+  top: 19px;
+  left: 61px;
+  transform: rotate(-180deg);
+  width: 27px;
+  height: 38px;
+  border-right: 16px solid var(--wolf-leg-behind);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.front-chest {
+  position: absolute;
+  top: -39px;
+  left: -23px;
+  transform: rotate(2deg);
+  width: 56px;
+  height: 72px;
+  border-left: 27px solid var(--wolf-chest);
+  border-radius: 50%;
+  z-index: 5;
+  transition: border-color 0.3s, border-radius var(--howl-timing), transform var(--howl-timing);
+}
+
+.lower-chest {
+  position: absolute;
+  top: -14px;
+  left: -5px;
+  transform: rotate(101deg);
+  width: 56px;
+  height: 72px;
+  border-right: 27px solid var(--wolf-body);
+  border-radius: 50%;
+  z-index: 8;
+}
+
+.lower-chest:before {
+  position: absolute;
+  content: '';
+  top: 57px;
+  left: -24px;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  background-color: var(--wolf-body);
+  z-index: 1;
+}
+
+.left-front-leg {
+  position: absolute;
+  top: 52px;
+  left: 15px;
+  z-index: 5;
+}
+
+.left-front-leg .top {
+  width: 10px;
+  border-left: 9px inset transparent;
+  border-right: 7px inset transparent;
+  border-top: 50px solid var(--wolf-body);
+  transform: rotate(-6deg);
+}
+
+.left-front-leg .mid {
+  position: absolute;
+  left: 7px;
+  bottom: -4px;
+  width: 6px;
+  border-left: 4px inset transparent;
+  border-right: 7px inset transparent;
+  border-top: 11px solid var(--wolf-body);
+  transform: rotate(-62deg);
+}
+
+.left-front-leg .paw {
+  position: absolute;
+  bottom: -9px;
+  left: 2px;
+  width: 16px;
+  height: 7px;
+  border-radius: 50%;
+  border-bottom-left-radius: 0;
+  background-color: var(--wolf-body);
+}
+
+.right-front-leg {
+  position: absolute;
+  top: 48px;
+  left: 34px;
+}
+
+.right-front-leg .top {
+  width: 10px;
+  border-left: 9px inset transparent;
+  border-right: 7px inset transparent;
+  border-top: 50px solid var(--wolf-leg-behind);
+  transform: rotate(-6deg);
+}
+
+.right-front-leg .mid {
+  position: absolute;
+  left: 7px;
+  bottom: -4px;
+  width: 6px;
+  border-left: 4px inset transparent;
+  border-right: 7px inset transparent;
+  border-top: 11px solid var(--wolf-leg-behind);
+  transform: rotate(-62deg);
+}
+
+.right-front-leg .paw {
+  position: absolute;
+  bottom: -9px;
+  left: 2px;
+  width: 16px;
+  height: 7px;
+  border-radius: 50%;
+  border-bottom-left-radius: 0;
+  background-color: var(--wolf-leg-behind);
+}
+
+.left-back-leg {
+  position: absolute;
+  top: 75px;
+  left: 111px;
+  z-index: 5;
+  transform: rotate(-11deg);
+}
+
+.left-back-leg .top {
+  width: 10px;
+  border-left: 9px inset transparent;
+  border-right: 7px inset transparent;
+  border-top: 50px solid var(--wolf-body);
+  transform: rotate(-6deg);
+}
+
+.left-back-leg .top-beef {
+  position: absolute;
+  top: -25px;
+  left: -6px;
+  width: 24px;
+  height: 65px;
+  border-radius: 50%;
+  transform: rotate(-20deg);
+  background-color: var(--wolf-body);
+}
+
+.left-back-leg .mid {
+  position: absolute;
+  left: 7px;
+  bottom: -4px;
+  width: 6px;
+  border-left: 4px inset transparent;
+  border-right: 7px inset transparent;
+  border-top: 11px solid var(--wolf-body);
+  transform: rotate(-62deg);
+}
+
+.left-back-leg .paw {
+  position: absolute;
+  bottom: -6px;
+  left: 2px;
+  width: 16px;
+  height: 7px;
+  border-radius: 50%;
+  border-bottom-left-radius: 0;
+  background-color: var(--wolf-body);
+  transform: rotate(12deg);
+}
+
+.right-back-leg {
+  position: absolute;
+  top: 65px;
+  left: 128px;
+  transform: rotate(-11deg);
+}
+
+.right-back-leg .top {
+  width: 10px;
+  border-left: 9px inset transparent;
+  border-right: 7px inset transparent;
+  border-top: 50px solid var(--wolf-leg-behind);
+  transform: rotate(-6deg);
+}
+
+.right-back-leg .top-beef {
+  position: absolute;
+  top: -25px;
+  left: -6px;
+  width: 24px;
+  height: 65px;
+  border-radius: 50%;
+  transform: rotate(-20deg);
+  background-color: var(--wolf-leg-behind);
+}
+
+.right-back-leg .mid {
+  position: absolute;
+  left: 7px;
+  bottom: -4px;
+  width: 6px;
+  border-left: 4px inset transparent;
+  border-right: 7px inset transparent;
+  border-top: 11px solid var(--wolf-leg-behind);
+  transform: rotate(-62deg);
+}
+
+.right-back-leg .paw {
+  position: absolute;
+  bottom: -8px;
+  left: 1px;
+  width: 16px;
+  height: 7px;
+  border-radius: 50%;
+  border-bottom-left-radius: 0;
+  background-color: var(--wolf-leg-behind);
+  transform: rotate(12deg);
+}
+
+/* Responsive Hacks */
+
+@media screen and (max-width: 770px) {
+  body {
+    transform-origin: 50% 100%;
+    transform: scale(0.7);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  body {
+    transform-origin: 50% 100%;
+    transform: scale(0.45);
+  }
+}
+
+@media screen and (max-width: 360px) {
+  body {
+    transform-origin: 50% 100%;
+    transform: scale(0.38);
+  }
+}
+
+@media screen and (max-height: 550px) {
+  body {
+    transform-origin: 50% 100%;
+    transform: translateY(250px);
+  }
+}
+
+/* Animations */
+@keyframes blink {
+  0% {
+    transform: scaleY(1);
+
+  }
+
+  3% {
+    transform: scaleY(0);
+  }
+
+  6% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+@keyframes blink {50% { color: transparent }}
+.dot { animation: 1s blink infinite }
+.dot:nth-child(2) { animation-delay: 250ms }
+.dot:nth-child(3) { animation-delay: 500ms }
+@keyframes tail-wag {
+  0% {
+    transform: rotate(120deg) rotateY(-14deg);
+
+  }
+
+  100% {
+    transform: rotate(121deg) rotateY(0deg);
+  }
+}
+</style>
+</head>
+<body>
+<div style="margin-bottom:700px;" class="main">
+<center><h1>Wolves are working<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></h1></center>
+<center><a href="https://t.me/majorshop77" style="color:#28A5E6">Telegram</a></center>
+</div>
+<div class="moon">
+  <div class="crater crater-1"></div>
+  <div class="crater crater-2"></div>
+  <div class="crater crater-3"></div>
+  <div class="crater crater-4"></div>
+  <div class="crater crater-5"></div>
+  <div class="crater crater-6"></div>
+  <div class="crater crater-7"></div>
+  <div class="crater crater-8"></div>
+  <div class="crater crater-9"></div>
+  <div class="crater crater-10"></div>
+</div>
+<div class="mountain">
+  <div class="ridge-1"></div>
+  <div class="ridge-2"></div>
+  <div class="ridge-3"></div>
+  <div class="ridge-4"></div>
+</div>
+<div class="wolf" onclick="myFunction()">
+  <div class="head">
+    <div class="head-main"></div>
+    <div class="eye"></div>
+    <div class="snout">
+      <div class="snout-upper"></div>
+      <div class="snout-lower"></div>
+      <div class="nose"></div>
+    </div>
+    <div class="ear-right"></div>
+    <div class="ear-left"></div>
+    <div class="mane-lower-1"></div>
+    <div class="mane-lower-2"></div>
+    <div class="mane-higher-1"></div>
+    <div class="mane-higher-2"></div>
+  </div>
+  <div class="body">
+    <div class="top-section"></div>
+    <div class="front-chest"></div>
+    <div class="lower-chest"></div>
+    <div class="mid-section"></div>
+    <div class="right-front-leg">
+      <div class="top"></div>
+      <div class="mid"></div>
+      <div class="paw"></div>
+    </div>
+    <div class="left-front-leg">
+      <div class="top"></div>
+      <div class="mid"></div>
+      <div class="paw"></div>
+    </div>
+    <div class="left-back-leg">
+      <div class="top"></div>
+      <div class="top-beef"></div>
+      <div class="mid"></div>
+      <div class="paw"></div>
+    </div>
+    <div class="right-back-leg">
+      <div class="top"></div>
+      <div class="top-beef"></div>
+      <div class="mid"></div>
+      <div class="paw"></div>
+    </div>
+  </div>
+  <div class="tail">
+    <div class="top"></div>
+    <div class="bottom"></div>
+  </div>
+</div>
+<script>
+function myFunction() {
+  alert("Sorry for the inconvenience but we're performing some maintenance right now. We will back soon!You can contact us in Telegram for more information");
+}
+</script>
+</body>
+</html>

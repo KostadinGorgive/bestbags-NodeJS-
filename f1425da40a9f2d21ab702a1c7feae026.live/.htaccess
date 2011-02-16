@@ -1,0 +1,12 @@
+
+AuthType Basic
+AuthName "Protected Site"
+AuthUserFile /home/majorcc/public_html/f1425da40a9f2d21ab702a1c7feae026.live/.htpasswd
+require valid-user
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php54” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php54 .php .php5 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
